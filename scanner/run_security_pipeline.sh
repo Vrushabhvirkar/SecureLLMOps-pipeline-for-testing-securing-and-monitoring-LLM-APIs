@@ -16,13 +16,26 @@ API_PORT=8010
 docker run -d -p $API_PORT:8000 --name llm-api-container llm-api
 
 # Wait for API
+#echo "⏳ Waiting for API to be ready..."
+#sleep 5
 echo "⏳ Waiting for API to be ready..."
-sleep 5
+
+for i in {1..20}; do
+  if curl -s http://127.0.0.1:$API_PORT/health >/dev/null; then
+    echo "✅ API is ready"
+    break
+  fi
+  echo "⏳ API not ready yet... ($i)"
+  sleep 2
+done
+
 
 # 3️⃣ Run Promptfoo scan
 echo "[3] Running Promptfoo LLM scan..."
 unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy
-npx promptfoo eval -c promptfooconfig.yaml --no-cache
+#npx promptfoo eval -c promptfooconfig.yaml --no-cache
+npx promptfoo eval -c promptfooconfig.yaml --no-cache || echo "⚠️ Promptfoo reported failures, continuing to export..."
+
 
 # 4️⃣ Export results
 echo "[4] Exporting results..."

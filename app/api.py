@@ -13,6 +13,10 @@ load_dotenv("../.env")
 
 app = FastAPI()
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 class LoginRequest(BaseModel):
     username: str
     password: str
