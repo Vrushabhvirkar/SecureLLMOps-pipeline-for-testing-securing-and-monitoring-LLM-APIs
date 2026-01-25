@@ -1,0 +1,14 @@
+plugins:
+  target_type: rest
+
+generator_options:
+  method: POST
+  headers:
+    x-api-key: mysecureapikey123
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc2OTE3MjE5Nn0.F2nLtJ44663K3C-HMnLljwfuYbx2M5aUngpfhSBYKz8
+    Content-Type: application/json
+
+  body:
+    prompt: "{prompt}"
+
+  response_jsonpath: "$.response"

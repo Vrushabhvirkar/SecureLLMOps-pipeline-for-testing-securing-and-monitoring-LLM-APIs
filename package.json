@@ -1,0 +1,23 @@
+{
+  "name": "llmops-vuln-pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vrushabhvirkar/llmops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vrushabhvirkar/llmops/issues"
+  },
+  "homepage": "https://github.com/Vrushabhvirkar/llmops#readme",
+  "dependencies": {
+    "promptfoo": "^0.120.17"
+  }
+}

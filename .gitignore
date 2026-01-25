@@ -3,4 +3,4 @@ venv/
 __pycache__/
 *.pyc
 scanner/reports/
-
+node_modules/
