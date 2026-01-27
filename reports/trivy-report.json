@@ -1,15 +1,15 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2026-01-27T06:34:21.394228192-05:00",
+  "CreatedAt": "2026-01-27T11:55:57.597867942-05:00",
   "ArtifactName": "llm-api",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 1130603520,
+    "Size": 1130604032,
     "OS": {
       "Family": "debian",
       "Name": "13.3"
     },
-    "ImageID": "sha256:0b1ecaef996b4905d5136621f061ee0ab6d03b7fd662191ab7454c3964df7983",
+    "ImageID": "sha256:5b01794181d442550b23d090246184db2cd002ccde2207871f07bb59f9f2d05a",
     "DiffIDs": [
       "sha256:e50a58335e1366e2581fe61794c1651afe2fe04e881e795aa166f24f4fc78d92",
       "sha256:523062ea36b5189e9ea6d7d86850296d1d7b5b4418109217e7ac12e13273fbba",
@@ -18,14 +18,14 @@
       "sha256:a3b1faeb18c22121a48d8b9726f35b1a81a76792aee2250c6a5f30cc171b8fe5",
       "sha256:3a6dde79819fcee2455e6aef2f4943ed73b4233dbe4596badb66bc4c8528f9ac",
       "sha256:07352e3423cd32b9c1ff30e20a7a63e054e2d3f40307617c68bf7d82efd20787",
-      "sha256:de91c9b67820350b8b8fdcdca9e4447780b4c0515d6498e88014e1308342c5d2"
+      "sha256:b967d00436c3271143745e0084e7787b10b4984ea3375fa9d9a746b916a1eaec"
     ],
     "RepoTags": [
       "llm-api:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-01-27T05:49:18.546679788-05:00",
+      "created": "2026-01-27T11:37:18.975864024-05:00",
       "history": [
         {
           "created": "2026-01-12T00:00:00Z",
@@ -99,24 +99,24 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-01-27T10:49:18Z",
+          "created": "2026-01-27T16:37:18Z",
           "created_by": "COPY app /app # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-01-27T10:49:18Z",
+          "created": "2026-01-27T16:37:18Z",
           "created_by": "EXPOSE map[8000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-01-27T10:49:18Z",
+          "created": "2026-01-27T16:37:18Z",
           "created_by": "CMD [\"python\" \"-m\" \"uvicorn\" \"api:app\" \"--host\" \"0.0.0.0\" \"--port\" \"8000\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-01-27T10:49:18Z",
+          "created": "2026-01-27T16:37:18Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"curl -f http://localhost:8000/health || exit 1\"] \"10s\" \"3s\" \"0s\" \"0s\" '\\x05'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -133,7 +133,7 @@
           "sha256:a3b1faeb18c22121a48d8b9726f35b1a81a76792aee2250c6a5f30cc171b8fe5",
           "sha256:3a6dde79819fcee2455e6aef2f4943ed73b4233dbe4596badb66bc4c8528f9ac",
           "sha256:07352e3423cd32b9c1ff30e20a7a63e054e2d3f40307617c68bf7d82efd20787",
-          "sha256:de91c9b67820350b8b8fdcdca9e4447780b4c0515d6498e88014e1308342c5d2"
+          "sha256:b967d00436c3271143745e0084e7787b10b4984ea3375fa9d9a746b916a1eaec"
         ]
       },
       "config": {
@@ -200,8 +200,8 @@
         "DiffID": "sha256:07352e3423cd32b9c1ff30e20a7a63e054e2d3f40307617c68bf7d82efd20787"
       },
       {
-        "Size": 943054848,
-        "DiffID": "sha256:de91c9b67820350b8b8fdcdca9e4447780b4c0515d6498e88014e1308342c5d2"
+        "Size": 943055360,
+        "DiffID": "sha256:b967d00436c3271143745e0084e7787b10b4984ea3375fa9d9a746b916a1eaec"
       }
     ]
   },
@@ -321,7 +321,7 @@
           "InstalledVersion": "0.19.1",
           "Status": "affected",
           "Layer": {
-            "DiffID": "sha256:de91c9b67820350b8b8fdcdca9e4447780b4c0515d6498e88014e1308342c5d2"
+            "DiffID": "sha256:b967d00436c3271143745e0084e7787b10b4984ea3375fa9d9a746b916a1eaec"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-23342",
@@ -500,7 +500,7 @@
           "FixedVersion": "78.1.1",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:de91c9b67820350b8b8fdcdca9e4447780b4c0515d6498e88014e1308342c5d2"
+            "DiffID": "sha256:b967d00436c3271143745e0084e7787b10b4984ea3375fa9d9a746b916a1eaec"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-47273",

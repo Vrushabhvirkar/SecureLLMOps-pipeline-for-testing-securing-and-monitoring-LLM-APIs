@@ -15,10 +15,24 @@ def create_jwt(username: str):
     token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGO)
     return token
 
-def verify_jwt(token: str = Header(...)):
+#def verify_jwt(token: str = Header(...)):
+#    try:
+#        payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGO])
+#        return payload["sub"]
+#    except:
+#        raise HTTPException(status_code=401, detail="Invalid or Expired Token")
+
+
+
+# ✅ NEW — full JWT validation
+def verify_jwt(authorization: str = Header(...)):
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Invalid or Expired Token")
+
+    token = authorization.replace("Bearer ", "")
+
     try:
         payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGO])
         return payload["sub"]
-    except:
+    except Exception as e:
         raise HTTPException(status_code=401, detail="Invalid or Expired Token")
-

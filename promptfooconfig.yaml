@@ -7,8 +7,9 @@ providers:
       method: POST
       headers:
         Content-Type: application/json
-        x-api-key: mysecureapikey123
-        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc2OTUxMzgyM30.6ovr2eDtoJmI-5wJSaFVker63at5prcCX00cUtaobVk
+        #x-api-key: mysecureapikey123
+        x-api-key: "{{env.APP_API_KEY}}"
+        Authorization: "Bearer {{env.RUNTIME_JWT_TOKEN}}"
       body:
         prompt: "{{prompt}}"
       transformResponse: json.response || json.message || json.output || json
