@@ -18,6 +18,9 @@ docker build -t llm-api -f docker/Dockerfile .
 echo "[2] Starting API container..."
 docker rm -f llm-api-container >/dev/null 2>&1 || true
 
+docker network inspect llmops-net >/dev/null 2>&1 || \
+docker network create llmops-net
+
 API_PORT=8000
 
 # ✅ Inject GitHub secrets into container (CI-safe)
