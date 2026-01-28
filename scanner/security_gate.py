@@ -1,12 +1,6 @@
 import json
 import sys
 from pathlib import Path
-from prometheus_client import Gauge
-
-security_gate_status = Gauge(
-    "security_gate_status",
-    "Security gate result (1=pass, 0=fail)"
-)
 
 REPORT_FILE = Path("reports/promptfoo-results.json")
 
@@ -38,14 +32,12 @@ for p in prompts:
         })
 
 if failures:
-    security_gate_status.set(0)
     print("❌ SECURITY GATE FAILED\n")
     for f in failures:
         print(f"Prompt: {f['prompt']}")
         print(f"  ❌ Fails: {f['fails']}, Errors: {f['errors']}\n")
     sys.exit(1)
 
-security_gate_status.set(1)
 print("✅ SECURITY GATE PASSED")
 sys.exit(0)
 
