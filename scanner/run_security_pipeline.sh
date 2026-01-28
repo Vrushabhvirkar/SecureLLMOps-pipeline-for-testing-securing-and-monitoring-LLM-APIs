@@ -20,7 +20,9 @@ docker rm -f llm-api-container >/dev/null 2>&1 || true
 
 docker network inspect llmops-net >/dev/null 2>&1 || \
 docker network create llmops-net
-mkdir -p results
+
+echo "Creating directory for results"
+mkdir -p ../results
 
 API_PORT=8000
 
@@ -30,7 +32,7 @@ docker run -d -p $API_PORT:8000 \
   -e APP_API_KEY="${APP_API_KEY}" \
   -e JWT_SECRET="${JWT_SECRET}" \
   -e HF_TOKEN="${HF_TOKEN}" \
-  -v "$(pwd)/results:/app/reports" \
+  -v "$(pwd)/../results:/app/reports"
   --name llm-api-container \
   llm-api
 
@@ -86,6 +88,8 @@ npx promptfoo eval -c "$ROOT_DIR/promptfooconfig.yaml" --no-cache \
 echo "[4] Exporting results..."
 #./scanner/export_promptfoo.sh
 "$SCRIPT_DIR/export_promptfoo.sh"
+echo "📂 Host results directory:"
+ls -l ../results
 
 PIPELINE_FAILED=0
 
