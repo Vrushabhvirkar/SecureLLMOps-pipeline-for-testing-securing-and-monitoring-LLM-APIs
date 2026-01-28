@@ -20,6 +20,7 @@ docker rm -f llm-api-container >/dev/null 2>&1 || true
 
 docker network inspect llmops-net >/dev/null 2>&1 || \
 docker network create llmops-net
+mkdir -p results
 
 API_PORT=8000
 
@@ -29,6 +30,7 @@ docker run -d -p $API_PORT:8000 \
   -e APP_API_KEY="${APP_API_KEY}" \
   -e JWT_SECRET="${JWT_SECRET}" \
   -e HF_TOKEN="${HF_TOKEN}" \
+  -v "$(pwd)/results:/app/reports" \
   --name llm-api-container \
   llm-api
 
