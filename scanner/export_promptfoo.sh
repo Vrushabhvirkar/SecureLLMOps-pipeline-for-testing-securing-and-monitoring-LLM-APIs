@@ -3,7 +3,7 @@ set -e
 
 echo "📤 Exporting latest Promptfoo results..."
 
-REPORT_DIR="/app/reports"
+REPORT_DIR="reports"
 mkdir -p "$REPORT_DIR"
 
 STATE_FILE="$HOME/.promptfoo/evalLastWritten"
