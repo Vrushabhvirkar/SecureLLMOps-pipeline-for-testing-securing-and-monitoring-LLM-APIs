@@ -4,6 +4,7 @@ env:
   HF_TOKEN: ${{ secrets.HF_TOKEN }}
   JWT_SECRET: ${{ secrets.JWT_SECRET }}
   APP_API_KEY: ${{ secrets.APP_API_KEY }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 
 on:
