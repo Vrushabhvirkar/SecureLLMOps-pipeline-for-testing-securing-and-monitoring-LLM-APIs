@@ -84,7 +84,7 @@ Deploy pipeline on AWS EC2 using Docker
 🧱 Project Architecture (Workflow)
 ---
 ## 🧱 Project Architecture
-![Architecture Diagram](images/architecture.jpg)
+![Architecture Diagram](images/architecture.jpeg)
 
 🗂️ Project Structure
 ---
