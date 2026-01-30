@@ -83,27 +83,8 @@ Deploy pipeline on AWS EC2 using Docker
 
 🧱 Project Architecture (Workflow)
 ---
-Developer Push (GitHub)
-        ↓
-GitHub Actions CI/CD
-        ↓
-Build Docker Image
-        ↓
-Start FastAPI LLM Service
-        ↓
-Promptfoo Security Scan
-        ↓
-Export Reports
-        ↓
-Security Gate Validation
-        ↓
-Trivy Vulnerability Scan
-        ↓
-Store Reports (/reports)
-        ↓
-Prometheus Metrics Collection
-        ↓
-Grafana Dashboard Visualization
+## 🧱 Project Architecture
+![Architecture Diagram](images/architecture.jpg)
 
 🗂️ Project Structure
 ---
