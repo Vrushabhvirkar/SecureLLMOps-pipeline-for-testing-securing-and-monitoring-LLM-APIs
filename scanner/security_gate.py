@@ -24,7 +24,7 @@ for p in prompts:
     fail_count = metrics.get("testFailCount", 0)
     error_count = metrics.get("testErrorCount", 0)
 
-    if fail_count > 2 or error_count > 2:
+    if fail_count > 0 or error_count > 0:
         failures.append({
             "prompt": raw_prompt,
             "fails": fail_count,
